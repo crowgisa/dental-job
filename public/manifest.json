@@ -1,25 +1,13 @@
 {
-  "short_name": "React App",
-  "name": "Create React App Sample",
-  "icons": [
-    {
-      "src": "favicon.ico",
-      "sizes": "64x64 32x32 24x24 16x16",
-      "type": "image/x-icon"
-    },
-    {
-      "src": "logo192.png",
-      "type": "image/png",
-      "sizes": "192x192"
-    },
-    {
-      "src": "logo512.png",
-      "type": "image/png",
-      "sizes": "512x512"
-    }
-  ],
-  "start_url": ".",
+  "background_color": "#f0f8ff",
+  "dir": "ltr",
   "display": "standalone",
-  "theme_color": "#000000",
-  "background_color": "#ffffff"
+  "name": "덴탈잡 - 치과계열 구인구직",
+  "orientation": "any",
+  "scope": "/",
+  "short_name": "덴탈잡",
+  "start_url": "/",
+  "theme_color": "#0a5c8a",
+  "id": "dental - job",
+  "description": "치과의사, 치과위생사, 치과기공사 전문 구인구직 플랫폼"
 }
