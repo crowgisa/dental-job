@@ -1,13 +1,31 @@
 {
-  "background_color": "#f0f8ff",
-  "dir": "ltr",
-  "display": "standalone",
-  "name": "덴탈잡 - 치과계열 구인구직",
-  "orientation": "any",
-  "scope": "/",
   "short_name": "덴탈잡",
-  "start_url": "/",
-  "theme_color": "#0a5c8a",
-  "id": "dental - job",
-  "description": "치과의사, 치과위생사, 치과기공사 전문 구인구직 플랫폼"
+  "name": "덴탈잡 - 치과계열 구인구직",
+  "description": "치과의사, 치과위생사, 치과기공사 전문 구인구직 플랫폼",
+  "icons": [
+    {
+      "src": "android-chrome-192x192.png",
+      "type": "image/png",
+      "sizes": "192x192",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "android-chrome-512x512.png",
+      "type": "image/png",
+      "sizes": "512x512",
+      "purpose": "any maskable"
+    }
+  ],
+  "start_url": ".",
+  "display": "standalone",
+  "theme_color": "#0A5C8A",
+  "background_color": "#F0F8FF",
+  "orientation": "portrait"
 }
+```
+
+저장 후 터미널에서:
+```
+git add .
+git commit -m "아이콘 추가"
+git push
