@@ -1,38 +1,76 @@
-.App {
-  text-align: center;
+/* ── 전체 리셋 & 안드로이드 최적화 ── */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  -webkit-tap-highlight-color: transparent;
+  -webkit-touch-callout: none;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+html, body, #root {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+body {
+  font-family: 'Noto Sans KR', -apple-system, BlinkMacSystemFont, sans-serif;
+  background: #e0e0e0;
   display: flex;
-  flex-direction: column;
-  align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  align-items: flex-start;
+  /* 안드로이드 폰트 렌더링 최적화 */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  /* 텍스트 크기 자동조정 방지 */
+  -webkit-text-size-adjust: 100%;
 }
 
-.App-link {
-  color: #61dafb;
+#root {
+  width: 100%;
+  max-width: 480px;
+  height: 100vh;
+  height: 100dvh; /* 동적 뷰포트 높이 (안드로이드 주소창 대응) */
+  overflow-y: auto;
+  overflow-x: hidden;
+  position: relative;
+  background: #F0F8FF;
+  /* 안드로이드 스크롤 최적화 */
+  -webkit-overflow-scrolling: touch;
+  overscroll-behavior: contain;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+/* 스크롤바 숨기기 */
+#root::-webkit-scrollbar { display: none; }
+#root { -ms-overflow-style: none; scrollbar-width: none; }
+
+/* 안드로이드 버튼 터치 최적화 */
+button {
+  -webkit-tap-highlight-color: transparent;
+  touch-action: manipulation;
+  cursor: pointer;
+  border: none;
+  font-family: 'Noto Sans KR', sans-serif;
 }
+
+input, textarea {
+  font-family: 'Noto Sans KR', sans-serif;
+  /* 안드로이드 입력창 확대 방지 */
+  font-size: 16px !important;
+}
+
+/* 안드로이드 Safe Area 대응 (노치, 홈버튼) */
+.safe-bottom {
+  padding-bottom: env(safe-area-inset-bottom);
+}
+
+/* 이미지 드래그 방지 */
+img { -webkit-user-drag: none; user-select: none; }
+
+/* 애니메이션 */
+@keyframes pulse { 0%,100%{transform:scale(1)} 50%{transform:scale(1.1)} }
+@keyframes fadeIn { from{opacity:0;transform:translateY(8px)} to{opacity:1;transform:translateY(0)} }
+@keyframes slideUp { from{transform:translateY(100%)} to{transform:translateY(0)} }
+
+.fade-in { animation: fadeIn 0.25s ease; }
+.slide-up { animation: slideUp 0.3s ease; }

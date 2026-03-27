@@ -303,7 +303,7 @@ export default function App() {
 
   // ══ SPLASH ══
   if (screen==="splash") return (
-    <div style={{ minHeight:"100vh", background:`linear-gradient(135deg,${COLORS.primary},${COLORS.secondary})`,
+    <div style={{ position:"fixed", inset:0, background:`linear-gradient(135deg,${COLORS.primary},${COLORS.secondary})`,
         display:"flex", flexDirection:"column", alignItems:"center", justifyContent:"center",
         fontFamily:"'Noto Sans KR',sans-serif" }}>
       <div style={{ fontSize:72 }}>🦷</div>
@@ -317,7 +317,9 @@ export default function App() {
 
   // ══ LOGIN ══
   if (screen==="login") return (
-    <div style={{ minHeight:"100vh", background:COLORS.bg, fontFamily:"'Noto Sans KR',sans-serif", display:"flex", flexDirection:"column" }}>
+    <div style={{ position:"fixed", inset:0, background:COLORS.bg,
+        fontFamily:"'Noto Sans KR',sans-serif", display:"flex", flexDirection:"column",
+        overflowY:"auto" }}>
       <div style={{ background:`linear-gradient(135deg,${COLORS.primary},${COLORS.secondary})`, padding:"40px 24px 28px", color:"white", textAlign:"center" }}>
         <div style={{ fontSize:44 }}>🦷</div>
         <div style={{ fontSize:24, fontWeight:900, marginTop:8 }}>덴탈잡</div>
@@ -368,8 +370,10 @@ export default function App() {
 
   // ══ MAIN ══
   return (
-    <div style={{ minHeight:"100vh", background:COLORS.bg, fontFamily:"'Noto Sans KR',sans-serif",
-        display:"flex", flexDirection:"column", maxWidth:480, margin:"0 auto", position:"relative" }}>
+    <div style={{ position:"fixed", inset:0, background:COLORS.bg,
+        fontFamily:"'Noto Sans KR',sans-serif",
+        display:"flex", flexDirection:"column",
+        maxWidth:480, margin:"0 auto" }}>
 
       {/* 헤더 */}
       <div style={{ background:`linear-gradient(135deg,${COLORS.primary},${COLORS.secondary})`,
@@ -415,7 +419,9 @@ export default function App() {
       )}
 
       {/* 콘텐츠 */}
-      <div style={{ flex:1, overflowY:"auto", padding:"13px", paddingBottom:120 }}
+      <div style={{ flex:1, overflowY:"auto", overflowX:"hidden",
+          padding:"13px", paddingBottom:"calc(120px + env(safe-area-inset-bottom))",
+          WebkitOverflowScrolling:"touch" }}
            onClick={()=>showNotif&&setShowNotif(false)}>
 
         {/* ══ HOME ══ */}
@@ -651,7 +657,8 @@ export default function App() {
 
       {/* 하단 네비게이션 */}
       <div style={{ background:"white", borderTop:"1px solid #eee",
-          boxShadow:"0 -2px 8px rgba(0,0,0,0.06)", flexShrink:0 }}>
+          boxShadow:"0 -2px 8px rgba(0,0,0,0.06)", flexShrink:0,
+          paddingBottom:"env(safe-area-inset-bottom)" }}>
         <div style={{ display:"flex", gap:8, padding:"7px 13px 4px" }}>
           {[["구인",`linear-gradient(135deg,${COLORS.primary},${COLORS.secondary})`],
             ["구직",`linear-gradient(135deg,${COLORS.success},#1aab4a)`]].map(([type,bg])=>(

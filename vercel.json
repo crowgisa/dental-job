@@ -1,0 +1,24 @@
+{
+  "headers": [
+    {
+      "source": "/manifest.json",
+      "headers": [
+        {
+          "key": "Access-Control-Allow-Origin",
+          "value": "*"
+        },
+        {
+          "key": "Content-Type",
+          "value": "application/manifest+json"
+        }
+      ]
+    }
+  ]
+}
+```
+
+저장 후 터미널에서:
+```
+git add .
+git commit -m "CORS 설정 추가"
+git push

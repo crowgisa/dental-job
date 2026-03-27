@@ -3,16 +3,46 @@
   <head>
     <meta charset="utf-8" />
     <link rel="icon" href="%PUBLIC_URL%/favicon.ico" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <!-- 안드로이드 최적화 viewport -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover" />
+
+    <!-- 테마 색상 -->
     <meta name="theme-color" content="#0A5C8A" />
-    <meta name="description" content="치과계열 전문 구인구직 플랫폼" />
+    <meta name="background-color" content="#F0F8FF" />
+
+    <!-- 앱 설명 -->
+    <meta name="description" content="치과의사, 치과위생사, 치과기공사 전문 구인구직 플랫폼" />
+    <meta name="keywords" content="치과, 구인구직, 치과의사, 치과위생사, 치과기공사, 덴탈잡" />
+
+    <!-- 안드로이드 앱처럼 동작 -->
+    <meta name="mobile-web-app-capable" content="yes" />
+    <meta name="application-name" content="덴탈잡" />
+
+    <!-- iOS 호환 -->
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+    <meta name="apple-mobile-web-app-title" content="덴탈잡" />
+
+    <!-- 아이콘 -->
     <link rel="apple-touch-icon" href="%PUBLIC_URL%/android-chrome-192x192.png" />
     <link rel="manifest" href="%PUBLIC_URL%/manifest.json" />
+
+    <!-- 구글 폰트 -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;600;700;900&display=swap" rel="stylesheet" />
+
     <title>덴탈잡</title>
+
+    <style>
+      /* 초기 로딩 화면 깜빡임 방지 */
+      html, body { background: #0A5C8A; }
+      #root { background: #F0F8FF; }
+    </style>
   </head>
   <body>
-    <noscript>You need to enable JavaScript to run this app.</noscript>
+    <noscript>이 앱을 사용하려면 JavaScript를 활성화해주세요.</noscript>
     <div id="root"></div>
   </body>
 </html>
-```
